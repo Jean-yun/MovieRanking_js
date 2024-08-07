@@ -5,6 +5,7 @@ import propTypes from 'prop-types';
 function Movie({ coverImg, title, summary, rating, genres }) {
 	return (
 	<div>
+		{/* all the img elements should have alt component */}
 		<img src={coverImg} alt={title}></img>
 		<h2>{title}</h2>
 		<p>Ratings : {rating} <br></br> {summary}</p>
