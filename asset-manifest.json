@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/MovieRanking_js/static/js/main.c0e825e5.js",
+    "index.html": "/MovieRanking_js/index.html",
+    "main.c0e825e5.js.map": "/MovieRanking_js/static/js/main.c0e825e5.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c0e825e5.js"
+  ]
+}
