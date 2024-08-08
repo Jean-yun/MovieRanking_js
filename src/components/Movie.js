@@ -18,7 +18,7 @@ function Movie({ id, url, coverImg, title, year, summary, rating, genres }) {
 				<p> {summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
 				<ul className={styles.movie__genres}>
 					{genres.map((g) => <li key={g}>{g}</li>)}
-				</ul>
+				</ul> 
 			</div>
 		</div>
 	)
