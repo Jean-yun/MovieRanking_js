@@ -12,7 +12,7 @@ function Movie({ id, url, coverImg, title, year, summary, rating, genres }) {
 			<img className={styles.movie__img} src={coverImg} alt={title}></img>
 			<div>
 				<h2 className={styles.movie__title}>
-					<Link to={`/MovieRanking_js/${id}`}> {title} </Link>
+					<Link to={`/movie/${id}`}> {title} </Link>
 				</h2>
 				<h3 className={styles.movie__year}> {year} <br></br> ⭐️⭐️⭐️ {rating} </h3>
 				<p> {summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>

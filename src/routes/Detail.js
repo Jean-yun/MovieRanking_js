@@ -39,9 +39,11 @@ function Detail() {
 							<span key={index} className={styles.genre}> {genre} </span>
 						))}
 					</div>
+					
 					<br></br>
 					<h4>Running Time : 🕠 {movie.runtime} min </h4>
 					<p>Movie Reviews : {movie.rating} / 10 </p>
+					
 					<br></br>
 					<span>
 					{movie.description_full ? movie.description_full : "No Description"}
