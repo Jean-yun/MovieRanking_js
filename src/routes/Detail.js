@@ -8,7 +8,7 @@ function Detail() {
 	const [loading, setLoading] = useState(true);
 	
 	const getMovie = async () => {
-		const response = await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`);
+		const response = await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}&with_images=true&with_cast=true`);
 		const json = await response.json();
 		setMovie(json.data.movie);
 		setLoading(false)
@@ -27,17 +27,29 @@ function Detail() {
 	}
 	//The result page
 	return (
-		<div className={styles.container} style={{ backgroundImage: `url(${movie.background_image})`}}>
-			<h1>{movie.title}</h1>
-			<h3>{movie.year}</h3>
-			<h3>{movie.genres.join(' ')}</h3>
-			<img src={movie.large_cover_image} alt={movie.title}></img>
-			<h4>Running Time : 🕠 {movie.runtime} min </h4>
-			<p>Movie Reviews : {movie.rating} / 10 </p>
-			
-			
-			
-		</div>
+		<div className={styles.container} style={{ backgroundImage: `url(${movie.background_image})` }}>
+			<div className={styles.contents}>
+				<img className={styles.image} src={movie.large_cover_image} alt={movie.title}></img>
+				
+				<div className={styles.info}>
+					<h1>{movie.title}</h1>
+					<h3>{movie.year}</h3>
+					<div className={styles.genres}>
+						{movie.genres.map((genre, index) => (
+							<span key={index} className={styles.genre}> {genre} </span>
+						))}
+					</div>
+					<br></br>
+					<h4>Running Time : 🕠 {movie.runtime} min </h4>
+					<p>Movie Reviews : {movie.rating} / 10 </p>
+					<br></br>
+					<span>
+					{movie.description_full ? movie.description_full : "No Description"}
+					</span>
+				</div>
+				
+			</div>
+		</div>	
 	)
 }
 
