@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Movie from './components/Movie';
+import Movie from '../components/Movie';
 
 
 function Home() {
@@ -13,8 +13,7 @@ function Home() {
       .then((json) => setMovies(json.data.movies));
     setLoading(false);
   }, []);
-  
-  console.log(movies)
+
 
   return (
     <div>
@@ -23,7 +22,9 @@ function Home() {
           {movies.map(movie =>
             // must include key variable 
             <Movie
-              key={movie.id}
+			  key={movie.id}
+			  id={movie.id}
+			  url={movie.url}
               coverImg={movie.medium_cover_image}
               title={movie.title}
               summary={movie.summary}
